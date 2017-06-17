@@ -74,7 +74,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Folder</string>
+           <string>File</string>
           </property>
          </widget>
         </item>
@@ -131,17 +131,24 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="pbUndo">
+          <property name="text">
+           <string>Undo</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
       <item>
-       <widget class="QSplitter" name="splitter">
+       <widget class="QSplitter" name="spFoldersFiles">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <widget class="QWidget" name="">
+        <widget class="QWidget" name="layoutWidget">
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QTableView" name="tbvFolders">
+           <widget class="CustomDblClickTableview" name="tbvFolders">
             <property name="editTriggers">
              <set>QAbstractItemView::NoEditTriggers</set>
             </property>
@@ -180,10 +187,10 @@
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="">
+        <widget class="QWidget" name="layoutWidget">
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
-           <widget class="QTableView" name="tbvFiles">
+           <widget class="CustomDblClickTableview" name="tbvFiles">
             <property name="editTriggers">
              <set>QAbstractItemView::NoEditTriggers</set>
             </property>
@@ -228,7 +235,7 @@
             <item>
              <widget class="QPushButton" name="pbDisable">
               <property name="text">
-               <string>Disable</string>
+               <string>Toggle</string>
               </property>
              </widget>
             </item>
@@ -351,32 +358,6 @@
      </widget>
     </item>
    </layout>
-   <zorder>pbPushIntoEasy</zorder>
-   <zorder>pbPushIntoHard</zorder>
-   <zorder>pbPushIntoElite</zorder>
-   <zorder>pbPushIntoCasual</zorder>
-   <zorder>pbPushIntoLegacyHard</zorder>
-   <zorder>label</zorder>
-   <zorder>lvSets</zorder>
-   <zorder>pbUp</zorder>
-   <zorder>pdDown</zorder>
-   <zorder>pbDisable</zorder>
-   <zorder>pbDelete</zorder>
-   <zorder>verticalSpacer</zorder>
-   <zorder>leAudioshieldFolder</zorder>
-   <zorder>pbSelectASFolder</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label_3</zorder>
-   <zorder>horizontalSpacer</zorder>
-   <zorder>verticalSpacer_2</zorder>
-   <zorder>tbvFolders</zorder>
-   <zorder>tbvFiles</zorder>
-   <zorder>pbAddFolder</zorder>
-   <zorder>pbRemoveFile</zorder>
-   <zorder>verticalSpacer_3</zorder>
-   <zorder>label</zorder>
-   <zorder>pbPushIntoEasy</zorder>
-   <zorder>edtDiag</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -390,6 +371,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CustomDblClickTableview</class>
+   <extends>QTableView</extends>
+   <header>luamwindow.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
